@@ -1,0 +1,35 @@
+.custom-card {
+    height: 500px; /* Set the desired height here */
+    position: relative;
+}
+
+.custom-card .card-img-top {
+    height: auto;
+    width: 100%;
+    object-fit: cover; /* Ensure the image fills the card */
+}
+
+.check-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4E6EBE;
+    color: white;
+    border: none;
+}
+
+.movienext {
+    font-family: 'Montserrat-Alt1';
+    font-style: normal;
+    font-weight: 350;
+    font-size: 128px;
+    line-height: 250px;
+    /* or 195% */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: -0.01em;
+    color: #4E6EBE;
+}
