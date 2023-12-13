@@ -14,13 +14,17 @@ return new class extends Migration
         if (!Schema::hasTable('reviews')) {
             Schema::create('reviews', function (Blueprint $table) {
                 $table->id();
-                $table->string('username');
                 $table->string('review');
+                $table->integer('user_id');
+                $table->integer('movie_id');
+                $table->integer('rating');
+
+                // Foreign keys
+                $table->foreign('user_id')->references('id')->on('users');
+                $table->foreign('movie_id')->references('id')->on('movies');
                 $table->timestamps();
             });
         }
-        
-        
     }
 
     /**

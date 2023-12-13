@@ -23,13 +23,89 @@
     font-family: 'Montserrat-Alt1';
     font-style: normal;
     font-weight: 350;
-    font-size: 128px;
-    line-height: 250px;
-    /* or 195% */
+    font-size: 30px;
+    line-height: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    margin: 15px;
     letter-spacing: -0.01em;
-    color: #4E6EBE;
+    color: white;
+}
+
+
+body{
+    background-color: #343434;
+}
+
+.navbar-brand{
+   width: 20px;
+   height: fit-content;
+   margin-left: 20px;
+}
+
+.navbar{
+    background-color: #4e6ebe;
+}
+
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .desc {
+    flex: 1; /* Mengisi sisa ruang kosong untuk elemen desc */
+  }
+  
+
+.btn{
+    background-color: transparent;
+    color: white;
+}
+
+.a{
+    color: white;
+    font-size: 40px;
+    margin-top: 40px;
+}
+
+.film{
+    margin-left: 10px;
+    margin-top: 35px;
+    width: 200px;
+    height: 300px;
+}
+
+.rate{
+    color: white;
+    margin-left: 115px;
+    margin-top: 175px;
+}
+
+.desc{
+    color: white;
+    margin-left: 150px;
+    margin-right: 100px;
+    text-align: justify;
+    margin-top: 35px;
+}
+
+.card{
+    border-radius: 18px;
+    margin-top: 35px;
+    background-color: #4e6ebe;
+}
+
+.card-text{
+    color: white;
+    text-align: justify;
+}
+
+.form-control{
+    background-color: #5D5D5D;
+    height: 100px;
+    margin-bottom: 50px;
 }

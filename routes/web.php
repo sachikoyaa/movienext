@@ -20,3 +20,6 @@ use App\Http\Controllers\MovieController;
 // });
 
 Route::get('/', [MovieController::class, 'showMovies'])->name('homepage');
+
+Route::get('/moviereview/{id}', [MovieController::class, 'movieDesc'])->name('moviedesc');
+

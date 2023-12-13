@@ -16,8 +16,12 @@ return new class extends Migration
                 $table->id();
                 $table->string('image');
                 $table->string('movieTitle');
-                $table->string('movieDesc');
-                $table->integer('rating');
+                $table->text('movieDesc');
+                $table->integer('overall');
+                $table->integer('genre_Id');
+
+                // Foreign key
+                $table->foreign('genre_id')->references('id')->on('genres');
                 $table->timestamps(); 
             });
         }    
