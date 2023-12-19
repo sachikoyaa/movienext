@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
+use App\Http\Controllers\UserController;
 
 
 /*
@@ -15,11 +16,21 @@ use App\Http\Controllers\MovieController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('homepage');
-// });
+Route::get('/login', function () {
+    return view('login');
+})->name('login');
 
-Route::get('/', [MovieController::class, 'showMovies'])->name('homepage');
+Route::post('/login', [UserController::class, 'login']);
+
+Route::get('/register', function () {
+    return view('register');
+})->name('register');
+
+Route::post('/register', [UserController::class, 'register']);
+
+
+Route::get('/home', [MovieController::class, 'showMovies'])->name('homepage');
 
 Route::get('/moviereview/{id}', [MovieController::class, 'movieDesc'])->name('moviedesc');
+
 

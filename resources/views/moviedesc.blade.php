@@ -40,7 +40,6 @@
       <h1 class="a d-flex justify-content-center align-items-center">{{$movie->movieTitle}}</h1>
 
       <div class="container">
-
         <div class="film-star">
           <div class="film">
             <img src="{{asset('images/movies/'. $movie->image)}}" alt="movies image {{$movie->id}}" style="width: 300px; height: auto;"> 
@@ -57,41 +56,35 @@
         <div class="desc">
           <h4 style="font-weight: bold; color: white;">Description</h4>
           <p>{{$movie->movieDesc}}</p>
-          <h4 style="font-weight: bold; color: white;">Directors</h4>
-          <p>Anthony Russo, Joe Russo</p>
-          <h4 style="font-weight: bold; color: white;">Writers</h4>
-          <p>Christopher Markus, Stephen McFeely, Stan Lee</p>
-          <h4 style="font-weight: bold; color: white;">Stars</h4>
-          <p>Robert Downey Jr., Chris Evans, Mark Ruffalo</p>
         </div>
 
-        <div class="komen">
-          <div class="card" style="width: 30rem;">
-            <div class="card-body">
-              <h6 class="card-title">Hayabusa</h6>
-              <p class="card-text">This film is an emotional rollercoaster with some of the coolest superhero plot lines ever drawn up. It's straight up the most epic Marvel film that will probably ever be created. I don't see how Marvel could ever top this, but getting to see these characters all together at least one last time was a reward all on its own.</p>
+        <div class="reviews">
+          <div class="col-md-6">
+            @foreach ($reviews as $review)
+              <div class="card" style="width: 300px;">
+                <div class="card-body">
+                  @php
+                      $user = App\Models\User::find($review->user_id);
+                  @endphp
+                  @if ($user)
+                    <h6 class="card-title">{{$user->username}}</h6>
+                  @else
+                      <h6 class="card-title">Unknown User</h6>
+                  @endif
+                  <p class="card-text">{{$review->review}}</p>
+                  <br>
+                </div>
+              </div>
+            @endforeach
+          </div>
+            <div class="col-md-6">
+              <form class="d-flex" role="search" style="width: 300px; height: 150px;">
+                
+                <input class="form-control" type="search" placeholder="Type your review here..." aria-label="Type your review here...">
+              </form>
             </div>
           </div>
-  
-        <div class="card" style="width: 30rem;">
-          <div class="card-body">
-            <h6 class="card-title">Kagura</h6>
-            <p class="card-text">The film has too many references to previous Marvel films, and is not friendly to those who are not Marvel fans. General audiences may easily get confused: what is this and why is that? The story is not original either. We have seen too many time-travel films, such as Back to the Future and Days of Future Past. This film does not offer anything new. Besides, the last thirty minutes are kind of redundant, and the overall running time is unnecessarily long.</p>
-          </div>
         </div>
-  
-        <div class="card" style="width: 30rem;">
-          <div class="card-body">
-            <h6 class="card-title">Katarinablu</h6>
-            <p class="card-text">This film is an emotional rollercoaster with some of the coolest superhero plot lines ever drawn up. It's straight up the most epic Marvel film that will probably ever be created. I don't see how Marvel could ever top this, but getting to see these characters all together at least one last time was a reward all on its own.</p>
-          </div>
-        </div> <br>
-        
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Type your review here..." aria-label="Type your review here...">
-        </form>
-      </div>
-      </div>
       
 </body>
 </html>

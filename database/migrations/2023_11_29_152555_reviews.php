@@ -14,7 +14,7 @@ return new class extends Migration
         if (!Schema::hasTable('reviews')) {
             Schema::create('reviews', function (Blueprint $table) {
                 $table->id();
-                $table->string('review');
+                $table->text('review');
                 $table->integer('user_id');
                 $table->integer('movie_id');
                 $table->integer('rating');

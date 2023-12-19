@@ -12,8 +12,6 @@
    
 </head>
 <body>
-    
-
     <nav class="navbar navbar-expand-lg d-flex">
         <div class="movienext">MOVIENEXT</div>
       

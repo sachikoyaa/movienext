@@ -1,41 +1,40 @@
-@extends('layout.background')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieNext</title>
 
-@section('content')
-
-<div class="row justify-content-center mt-5">
-    <div class="col-md-8">
-
-        <div class="card">
-            <div class="card-header">Login</div>
-            <div class="card-body">
-                <form action="" method="post">
-                    @csrf
-                    <div class="mb-3 row">
-                        <label for="email" class="col-md-4 col-form-label text-md-end text-start">Email Address</label>
-                        <div class="col-md-6">
-                          <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ old('email') }}">
-                            @if ($errors->has('email'))
-                                <span class="text-danger">{{ $errors->first('email') }}</span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <label for="password" class="col-md-4 col-form-label text-md-end text-start">Password</label>
-                        <div class="col-md-6">
-                          <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password">
-                            @if ($errors->has('password'))
-                                <span class="text-danger">{{ $errors->first('password') }}</span>
-                            @endif
-                        </div>
-                    </div>
-                    <div class="mb-3 row">
-                        <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Login">
-                    </div>
-                    
-                </form>
+    <!-- Add CSS link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{asset('css/styles.css')}}" rel="stylesheet">
+   
+</head>
+<body>
+    <div class="form-container">
+        <form method="POST" action="/login" enctype="multipart/form-data">
+        @csrf    
+        <h1 class="welcome-label">WELCOME BACK!</h1>
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="reg-form-control form-control-sm @error('username') is-invalid @enderror" value="{{old('username')}}" placeholder="Enter your Username">
+                @error('username')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
             </div>
-        </div>
-    </div>    
-</div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="reg-form-control form-control-sm @error('password') is-invalid @enderror" value="{{old('password')}}" placeholder="Enter your Password">
+                @error('password')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
+            </div>
+            <button type="submit" class="btn regis-btn">Login</button>
+        </form>
+    </div>
     
-@endsection
+
+    <!-- Add Bootstrap JS script (at the end of the body tag) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

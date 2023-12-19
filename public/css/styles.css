@@ -1,5 +1,5 @@
 .custom-card {
-    height: 500px; /* Set the desired height here */
+    height: 475px; /* Set the desired height here */
     position: relative;
 }
 
@@ -56,11 +56,10 @@ body{
     align-items: flex-start;
   }
   
-  .desc {
+.desc {
     flex: 1; /* Mengisi sisa ruang kosong untuk elemen desc */
-  }
+}
   
-
 .btn{
     background-color: transparent;
     color: white;
@@ -108,4 +107,54 @@ body{
     background-color: #5D5D5D;
     height: 100px;
     margin-bottom: 50px;
+}
+
+form {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #5D5D5D;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+}
+
+.reg-form-control {
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+
+.form-label {
+    font-weight: bold;
+    color: white;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.welcome-label {
+    color: white;
+    margin-bottom: 50px;
+}
+
+.regis-btn {
+    background-color: #4E6EBE;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 7px; /* Set border radius for rounded edges */
+    padding: 10px 150px; /* Adjust padding for button size */
+    cursor: pointer; /* Add cursor pointer for usability */
+    text-decoration: none; 
+    display: inline-block; 
+}
+
+.review-container {
+    margin-right: 50px;
 }
