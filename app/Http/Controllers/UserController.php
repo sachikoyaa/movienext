@@ -23,7 +23,7 @@ class UserController extends Controller
         
         $user->save();
 
-        return redirect()->route('homepage')->with('Success', true);
+        return redirect()->route('login');
     }
 
     public function login(Request $request): RedirectResponse
@@ -43,19 +43,15 @@ class UserController extends Controller
         return back()->withErrors([
             'username' => 'The provided credentials do not match our records.',
         ])->onlyInput('username');
-        
+    }
 
-        // // Search username
-        // $user = User::where('username', $request->input('username'))->first();
+    public function logout(Request $request)
+    {
+        Auth::logout();
 
-        // // Verification
-        // if($user && Hash::check($request->input('password'), $user->password)){
-        //     session(['user_id' => $user->id]);
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
 
-        //     return redirect()->route('homepage');
-        // } else {
-        //     //error if data is invalid
-        //     return redirect()->route('login')->with('error', 'Invalid username or password');
-        // }
+        return redirect('login');
     }
 }

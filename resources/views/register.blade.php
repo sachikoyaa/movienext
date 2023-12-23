@@ -33,6 +33,11 @@
                 @enderror
             </div>
             <button type="submit" class="btn regis-btn">Register</button>
+
+            <p class= "link">
+                Already have an account? 
+                <a class="nav-link link" style="text-decoration: underline" href="{{ route('login') }}">Login</a>
+            </p>
         </form>
     </div>
     

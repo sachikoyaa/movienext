@@ -78,16 +78,24 @@ body{
     height: 300px;
 }
 
-.rate{
+.ratestar{
     color: white;
     margin-left: 115px;
     margin-top: 175px;
+    display: flex;
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: flex-start;
+}
+
+.rate{
+    flex-direction: row-reverse;
+    display: flex;
+    padding-right: 200px; 
 }
 
 .desc{
     color: white;
     margin-left: 150px;
-    margin-right: 100px;
     text-align: justify;
     margin-top: 35px;
 }
@@ -96,6 +104,7 @@ body{
     border-radius: 18px;
     margin-top: 35px;
     background-color: #4e6ebe;
+    margin-right: 50px;
 }
 
 .card-text{
@@ -111,7 +120,6 @@ body{
 
 form {
     max-width: 400px;
-    margin: 50px auto;
     background-color: #5D5D5D;
     padding: 20px;
     border-radius: 8px;
@@ -155,6 +163,197 @@ form {
     display: inline-block; 
 }
 
+.reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
 .review-container {
-    margin-right: 50px;
+    height: 100px;
+    width: 500px;
+    padding-top: 20px;
+}
+
+.rate input[type="radio"],
+.rate label {
+    margin-right: 5px; /* Adds space between radio buttons and labels */
+}
+
+.rate:not(:checked) > input {
+    position:absolute;
+    display: none;
+}
+
+.rate:not(:checked) > label {
+    float:left;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+    
+.rated:not(:checked) > label {
+    float:left;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+    
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+    
+.rate > input:checked ~ label {
+    color: #FFC30B;
+}
+    
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #FFC30B;
+}
+    
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #FFC30B;
+}
+    
+.star-rating-complete{
+       color: #FFC30B;
+}
+    
+.rating-container .form-control:hover, .rating-container .form-control:focus{
+    background: #fff;
+    border: 1px solid #ced4da;
+}
+    
+.rating-container textarea:focus, .rating-container input:focus {
+    color: #000;
+}
+    
+.rated {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+    
+.rated:not(:checked) > input {
+    position:absolute;
+    display: none;
+}
+    
+.rated:not(:checked) > label {
+    float:left;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#FFC30B;
+}
+    
+.rated:not(:checked) > label:before {
+    content: '★ ';
+}
+    
+.rated > input:checked ~ label {
+    color: #FFC30B;
+}
+    
+.rated:not(:checked) > label:hover,
+.rated:not(:checked) > label:hover ~ label {
+    color: #FFC30B;
+}
+    
+.rated > input:checked + label:hover,
+.rated > input:checked + label:hover ~ label,
+.rated > input:checked ~ label:hover,
+.rated > input:checked ~ label:hover ~ label,
+.rated > label:hover ~ input:checked ~ label {
+    color: #FFC30B;
+}
+
+.submit-btn {
+    background-color: #4E6EBE;
+    color: white;
+    border-radius: 7px; 
+    padding: 10px 60px; 
+    cursor: pointer; 
+    text-decoration: none; 
+    display: inline-block; 
+    margin-left: 70px;
+    margin-bottom: 25px;
+}
+
+.link {
+    color: white; 
+    display: inline; 
+    font-size: 12px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1500px;
+    height: 750px;
+}
+
+.container img{
+    width: 100%;
+    height: 100%;
+}
+
+#overlay-image {
+    position: absolute;
+    top: 34%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    max-width: 100%; 
+    max-height: 100%;
+} 
+
+#overlay-image2 {
+    position: absolute;
+    top: 60%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+    max-width: 100%; 
+    max-height: 100%;
+}
+
+#myButton {
+    position: absolute;
+    top: 59%; 
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    cursor: pointer;
+    background-color: rgb(0, 0, 0, 0);
+    border: none;
+    font-weight: bold;
+    /* text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); */
+    
+}
+
+.containerbg {
+    position: fixed;
 }

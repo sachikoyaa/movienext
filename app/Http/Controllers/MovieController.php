@@ -28,4 +28,16 @@ class MovieController extends Controller
             abort(404);
         }
     }
+
+    public function showMovieRatings($id)
+    {
+        $movie = Movie::findOrFail($movieId);
+
+        $reviews = review::where('movie_id', $id)->get();
+
+        // calculating the review
+        $overall = $reviews->avg('rating');
+
+        return view('moviedesc', ['movie' => $movie, 'reviews' => $reviews, 'overall' => $overall]);
+    }
 }

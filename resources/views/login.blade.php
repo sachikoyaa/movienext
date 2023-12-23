@@ -13,24 +13,37 @@
 <body>
     <div class="form-container">
         <form method="POST" action="/login" enctype="multipart/form-data">
-        @csrf    
-        <h1 class="welcome-label">WELCOME BACK!</h1>
-            <div class="mb-3">
+        @csrf
+        <div class="container-login">
+            
+            <h1 class="welcome-label text-center">WELCOME BACK!</h1>
+            <div class="container-form mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" name="username" class="reg-form-control form-control-sm @error('username') is-invalid @enderror" value="{{old('username')}}" placeholder="Enter your Username">
                 @error('username')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <div class="mb-3">
+            <div class="container-form mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" class="reg-form-control form-control-sm @error('password') is-invalid @enderror" value="{{old('password')}}" placeholder="Enter your Password">
                 @error('password')
                     <div class="alert alert-danger">{{ $message }}</div>
                 @enderror
             </div>
-            <button type="submit" class="btn regis-btn">Login</button>
-        </form>
+
+            <div class="container-form">
+                <button type="submit" class="btn regis-btn">Login</button>
+            </div>
+
+            <div class="container-form">
+                <p class= "link">
+                    Don't have an account?
+                    <a class="nav-link link" style="text-decoration: underline" href="{{ route('register') }}">Register</a>
+                </p>
+            </div>
+        </div>
+        </form>  
     </div>
     
 
